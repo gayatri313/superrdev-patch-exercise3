@@ -16,9 +16,10 @@ export function useTasks(query, status, page, pageSize) {
         setTotal(data.total);
         setLoading(false);
       })
-      .catch((err) => {
-        setError(err.message);
-      });
+     .catch((err) => {
+  setError(err.message);
+  setLoading(false);
+});
   }, [query, status, page, pageSize]);
 
   return { tasks, total, loading, error };
